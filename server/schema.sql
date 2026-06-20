@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS watering_history (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  action ENUM('ON','OFF') NOT NULL,
+  timestamp DATETIME NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS pump_settings (
+  id INT PRIMARY KEY,
+  mode ENUM('OTOMATIS','MANUAL') DEFAULT 'OTOMATIS',
+  min_humidity INT DEFAULT 45,
+  max_humidity INT DEFAULT 80,
+  is_pump_on TINYINT(1) DEFAULT 0
+);
